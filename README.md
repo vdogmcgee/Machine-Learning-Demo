@@ -16,9 +16,9 @@
 
   用于存放分享的对应代码, 基于numpy实现
 
-  ### 2. 文件
+- ### 2. 文件说明
 
   ```shell
-    linear_regression_demo.py		线性回归
-    logisitc_regression_demo.py		逻辑回归
+  > linear_regression_demo.py		线性回归
+  > logisitc_regression_demo.py		逻辑回归
   ```
