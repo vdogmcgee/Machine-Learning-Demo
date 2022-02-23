@@ -78,5 +78,3 @@ if __name__ == '__main__':
         plt.legend()
         plt.show()
         
-        # todo 损失随着训练下降图像
-        

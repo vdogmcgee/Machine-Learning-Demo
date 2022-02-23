@@ -39,12 +39,15 @@ def draw(x, y, y_pred, final=True):
 
         
 def train(x, y, w, b, lr, epoch):
-    plt.ion() 
+    plt.ion()
+    # 储存历史损失
+    loss_list = []
     for i in range(epoch):
         # 用当前参数计算y_pred
         y_pred = w * x + b
         # 计算所有样本平均损失
         loss = ((y - y_pred) ** 2).sum() / len(y)
+        loss_list.append(loss)
         logger.warning((f"epoch:{i+1},  loss:{loss:.4f},  w:{w},  b:{b}"))
         # 更新参数
         w, b = update_parameter(x, w, b, lr)
@@ -53,6 +56,7 @@ def train(x, y, w, b, lr, epoch):
         draw(x, y, y_pred)
     plt.ioff()
     draw(x, y, y_pred, False)
+    return loss_list
 
 
 if __name__ == "__main__":
@@ -74,5 +78,10 @@ if __name__ == "__main__":
         # 设置训练轮次
         epoch = 20
         # 训练数据
-        train(x, y, w, b, lr, epoch)
+        loss_list = train(x, y, w, b, lr, epoch)
+        # 画出训练损失曲线
+        plt.plot(list(range(1,epoch+1)), loss_list, c="red")
+        plt.xlabel(u'训练轮次', fontproperties='SimHei', color='red')
+        plt.ylabel(u'loss', fontproperties='SimHei', color='red')
+        plt.show()
         
