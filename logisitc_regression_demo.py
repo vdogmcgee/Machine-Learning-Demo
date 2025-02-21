@@ -77,4 +77,6 @@ if __name__ == '__main__':
         plt.ylabel(u'花萼宽度(cm)', fontproperties='SimHei', color='red')
         plt.legend()
         plt.show()
-        
+    
+    
+    print(f'ok')

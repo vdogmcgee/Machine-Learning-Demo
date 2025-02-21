@@ -84,4 +84,5 @@ if __name__ == "__main__":
         plt.xlabel(u'训练轮次', fontproperties='SimHei', color='red')
         plt.ylabel(u'loss', fontproperties='SimHei', color='red')
         plt.show()
-        
+    
+    print(f'ok')
